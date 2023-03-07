@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "3761f3a8-2633-45a3-8796-5f9b93f469d8",
+		"name": "Phone Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26189034"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"test11224@test.com\",\r\n  \"password\": \"Password11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56733/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56733",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"test1122@test.com\",\r\n  \"password\": \"Password11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56733/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56733",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create valid store",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgxOTk3NTYsImlhdCI6MTY3ODE5OTQ1NiwibmJmIjoxNjc4MTk5NDU2LCJpZGVudGl0eSI6MTR9.bI9H9cKGb3WwyTQEEvmBS0pQrNBAiEjWIvDtUmvGAxk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"iPhones\",\r\n  \"uuid\": 1,\r\n  \"items\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56733/store/iPhones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56733",
+					"path": [
+						"store",
+						"iPhones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create invalid store",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgxNTc3MzYsImlhdCI6MTY3ODE1NzQzNiwibmJmIjoxNjc4MTU3NDM2LCJpZGVudGl0eSI6MTB9.ImOFYEpGfRD7vslFMW2nYF6RtqazlDPLmv-KpZd8AIE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": \"string\",\r\n  \"store_id\": 0,\r\n  \"description\": \"string\",\r\n  \"image\": \"string\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:56733/store/Phone",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56733",
+					"path": [
+						"store",
+						"Phone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create valid item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgxNTc3MzYsImlhdCI6MTY3ODE1NzQzNiwibmJmIjoxNjc4MTU3NDM2LCJpZGVudGl0eSI6MTB9.ImOFYEpGfRD7vslFMW2nYF6RtqazlDPLmv-KpZd8AIE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": \"50000\",\r\n  \"store_id\": 5,\r\n  \"description\": \"iPhone\",\r\n  \"image\": \"https://static.re-store.ru/upload/resize_cache/iblock/9f7/100500_800_140cd750bba9870f18aada2478b24840a/9f741f8ddabe1c66a61b2b698da35f35.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56733/item/iPhone11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56733",
+					"path": [
+						"item",
+						"iPhone11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create invalid item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgxNTc3MzYsImlhdCI6MTY3ODE1NzQzNiwibmJmIjoxNjc4MTU3NDM2LCJpZGVudGl0eSI6MTB9.ImOFYEpGfRD7vslFMW2nYF6RtqazlDPLmv-KpZd8AIE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": null,\r\n  \"store_id\": 57,\r\n  \"description\": \"iPhone\",\r\n  \"image\": \"https://static.re-store.ru/upload/resize_cache/iblock/9f7/100500_800_140cd750bba9870f18aada2478b24840a/9f741f8ddabe1c66a61b2b698da35f35.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56733/item/testPhone1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56733",
+					"path": [
+						"item",
+						"testPhone1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create invalid header item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "SKGjkvljLSjsklfjsld",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": 10,\r\n  \"store_id\": 4,\r\n  \"description\": \"iPhone\",\r\n  \"image\": \"https://static.re-store.ru/upload/resize_cache/iblock/9f7/100500_800_140cd750bba9870f18aada2478b24840a/9f741f8ddabe1c66a61b2b698da35f35.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56733/item/testPhone8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56733",
+					"path": [
+						"item",
+						"testPhone8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgxOTkxOTMsImlhdCI6MTY3ODE5ODg5MywibmJmIjoxNjc4MTk4ODkzLCJpZGVudGl0eSI6MTR9.Lc_TnWqK8TrFLCqkqF_K6PhqUiCGZ25pI8cv1JAWwAk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"itemId\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:56733/pay/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "56733",
+					"path": [
+						"pay",
+						"14"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
